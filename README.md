@@ -47,4 +47,5 @@ $ make up
 - TypeScript
 - Express
 - TypeORM
+- Postgres
 - Docker
