@@ -1,0 +1,31 @@
+version: '3.8'
+
+volumes:
+  postgres_data:
+
+services:
+
+  agenda:
+    image: symonnascimento/api_agenda:1.0 
+    restart: always
+    depends_on:
+      - postgres
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - 4000:4000
+    
+
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./.docker/postgres/init_db/init-database.sh:/docker-entrypoint-initdb.d/init-database.sh
+    env_file:
+      - ./envs/.postgres.env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - 5432:5432
+
