@@ -1,7 +1,7 @@
 
 ##  Iniciando os serviços
 
-Pré requisoto:
+Pré-requisito:
 - docker 
 - Makefile 
 
