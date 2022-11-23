@@ -1,19 +1,16 @@
 version: '3.8'
-
 volumes:
   postgres_data:
-
 services:
-
-  agenda:
-    image: symonnascimento/api_agenda:1.0 
-    restart: always
-    depends_on:
-      - postgres
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    ports:
-      - 4000:4000
+  # agenda:
+  #   image: symonnascimento/api_agenda:1.0 
+  #   restart: always
+  #   depends_on:
+  #     - postgres
+  #   extra_hosts:
+  #     - "host.docker.internal:host-gateway"
+  #   ports:
+  #     - 4000:4000
     
 
   postgres:
